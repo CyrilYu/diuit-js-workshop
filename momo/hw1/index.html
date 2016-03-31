@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="utf-8">
+      <title>Hello World</title>
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+
+      <script type="text/javascript">
+      var isHiden = true;
+      function demo() {
+
+          if(isHiden) {
+              document.getElementById('show-pwd').style.visibility = "visible";
+              document.getElementById('pwd-input').type = "text";
+              document.getElementById('pwd-btn').innerHTML = "hidden password";
+          }
+          else {
+              document.getElementById('show-pwd').style.visibility = "hidden";
+              document.getElementById('pwd-input').type = "password";
+              document.getElementById('pwd-btn').innerHTML = "show password";
+          }
+
+          isHiden = !isHiden;
+      };
+      function showVal() {
+          var words = document.getElementById('pwd-input').value;
+          document.getElementById('show-pwd').innerHTML= words;
+      }
+      </script>
+</head>
+<body>
+    <input type="password" id="pwd-input" oninput="showVal()">
+    <button id="pwd-btn" type="button" name="pwd-btn" onclick="demo()">show password</button>
+    <span>
+        <p id='show-pwd' style="visibility:hidden;">&nbsp;&nbsp;</p>
+    </span>
+</body>
+</html>
